@@ -4,6 +4,8 @@ import 'package:todo_movie/features/screens/home/presetation/widgets/intheaters_
 import 'package:todo_movie/features/screens/home/presetation/widgets/upcoming_screen.dart';
 import 'package:todo_movie/features/screens/home/presetation/widgets/widget_tabbar.dart';
 
+import '../../../../../utils/colors/app_color.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -25,14 +27,14 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      backgroundColor: const Color.fromARGB(255, 34, 34, 34),
+      backgroundColor:  AppColor.backgroundColor, 
       body: Column(
         children: [
           Tabbar(tabController: _tabController),
           Expanded(
             child: Container(
               margin: const EdgeInsets.only(top: 5.0),
-              color: Colors.grey[900],
+              color: AppColor.mainColor,
               child: TabBarView(
                 controller: _tabController,
                 children: const [

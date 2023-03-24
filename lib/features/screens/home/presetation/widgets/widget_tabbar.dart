@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:todo_movie/utils/colors/app_color.dart';
+import 'package:todo_movie/utils/styles/app_styles.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Tabbar extends StatelessWidget {
   const Tabbar({Key? key, required TabController tabController})
@@ -10,36 +13,26 @@ class Tabbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 40.0,
-      margin:const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+      margin: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color:const Color.fromARGB(255, 73, 73, 73)
+        color: AppColor.bodertabbar,
       ),
       child: TabBar(
         controller: _tabController,
         indicator: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
-          color: Colors.red,
+          color: AppColor.backgroundChoosedTabar,
         ),
         labelColor: Colors.amberAccent,
-        tabs:const <Widget>[
+        tabs: <Widget>[
           Tab(
-            child: Text(
-              "In Theater",
-              style:TextStyle(
-                color: Color.fromARGB(255, 255, 255, 255),
-                fontSize: 13.0,
-                fontWeight: FontWeight.w600,
-              ) ,),
+            child: Text(AppLocalizations.of(context)!.intheater,
+                style: AppStyle.textStyleTitleAppbar(context)),
           ),
           Tab(
-            child: Text(
-              "Upcoming",
-              style:TextStyle(
-                color: Color.fromARGB(255, 255, 255, 255),
-                fontSize: 13.0,
-                fontWeight: FontWeight.w600,
-              ) ,),
+            child: Text(AppLocalizations.of(context)!.upcoming,
+                style: AppStyle.textStyleTitleAppbar(context)),
           )
         ],
       ),
