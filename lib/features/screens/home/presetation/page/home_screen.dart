@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:todo_movie/entities/models/homes/intheaters/intheater/intheater.dart';
-import 'package:todo_movie/entities/models/homes/upcomings/upcoming/upcoming.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:todo_movie/features/screens/home/data/models/intheaters/intheater/intheater.dart';
+import 'package:todo_movie/features/screens/home/data/models/upcomings/upcoming/upcoming.dart';
+import 'package:todo_movie/features/screens/home/presetation/bloc/bloc/home_bloc_bloc.dart';
 import 'package:todo_movie/features/screens/home/presetation/widgets/intheaters_screen.dart';
 import 'package:todo_movie/features/screens/home/presetation/widgets/upcoming_screen.dart';
 import 'package:todo_movie/features/screens/home/presetation/widgets/widget_tabbar.dart';
@@ -33,25 +35,39 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => HomeBlocBloc(
+          futureInTheaters: context.read(), futureUpComing: context.read())
+        ..add(LoadInTheatersEvent()),
+      child: const InTheatersScreen(),
+    );
+  }
+}
+
+class InTheatersScreen extends StatelessWidget {
+  const InTheatersScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
       backgroundColor: AppColor.backgroundColor,
       body: Column(
         children: [
-          Tabbar(tabController: _tabController),
-          Expanded(
-            child: Container(
-              margin: const EdgeInsets.only(top: 5.0),
-              color: AppColor.mainColor,
-              child: TabBarView(
-                controller: _tabController,
-                children: const [
-                  InTheaterScreen(),
-                  UpComingScreen(),
-                ],
-              ),
-            ),
-          )
+          // Tabbar(tabController: _tabController),
+          // Expanded(
+          //   child: Container(
+          //     margin: const EdgeInsets.only(top: 5.0),
+          //     color: AppColor.mainColor,
+          //     child: TabBarView(
+          //       controller: _tabController,
+          //       children: const [
+          //         InTheaterScreen(),
+          //         UpComingScreen(),
+          //       ],
+          //     ),
+          //   ),
+          // )
         ],
       ),
     ));

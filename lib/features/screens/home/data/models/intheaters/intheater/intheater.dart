@@ -1,12 +1,13 @@
 import 'package:equatable/equatable.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:todo_movie/entities/models/homes/intheaters/dates/dates.dart';
-import 'package:todo_movie/entities/models/homes/intheaters/results/results.dart';
+import 'package:todo_movie/features/screens/home/data/models/upcomings/dates/dates.dart';
+import 'package:todo_movie/features/screens/home/data/models/upcomings/results/results.dart';
+import 'package:todo_movie/features/screens/home/domain/entities/intheaters/intheaters_entity.dart';
 
 part 'intheater.g.dart';
 
 @CopyWith()
-class InTheaters extends Equatable{
+class InTheaters extends Equatable {
   Dates? dates;
   int? page;
   List<Results>? results;
@@ -49,10 +50,11 @@ class InTheaters extends Equatable{
     data['total_results'] = totalResults;
     return data;
   }
-  
+
   @override
   // TODO: implement props
-  List<Object?> get props => throw [dates, page, results, totalPages, totalResults];
+  List<Object?> get props =>
+      throw [dates, page, results, totalPages, totalResults];
 
   @override
   bool get stringify => true;

@@ -1,9 +1,9 @@
 // ignore_for_file: must_be_immutable
-
 import 'package:equatable/equatable.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:todo_movie/entities/models/homes/upcomings/dates/dates.dart';
-import 'package:todo_movie/entities/models/homes/upcomings/results/results.dart';
+import 'package:todo_movie/features/screens/home/data/models/upcomings/dates/dates.dart';
+import 'package:todo_movie/features/screens/home/data/models/upcomings/results/results.dart';
+
 
 part 'upcoming.g.dart';
 

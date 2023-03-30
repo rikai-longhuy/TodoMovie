@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:todo_movie/entities/models/homes/intheaters/intheater/intheater.dart';
+import 'package:todo_movie/features/screens/home/data/models/intheaters/intheater/intheater.dart';
 
 const url =
     'https://api.themoviedb.org/3/movie/now_playing?api_key=d79d9f8467a0e6d7b24624c522cb2ab3';
