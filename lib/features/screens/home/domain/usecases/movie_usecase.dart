@@ -4,12 +4,13 @@ import 'package:todo_movie/features/screens/home/domain/entities/intheaters/inth
 import 'package:todo_movie/features/screens/home/domain/repositories/movie_repository.dart';
 
 class MovieUseCase {
-  final MovieRepository? movieRepository;
+  final MovieRepository movieRepository;
+  final MovieRepository firebaseRepository;
 
-  MovieUseCase({this.movieRepository});
+  MovieUseCase({required this.movieRepository});
 
-  Future<List<MovieModel>> getMovieList(
+  Future<List<MovieModel>?> getMovieList(
       {required String type, bool fromRemote = true}) async {
-    return movieRepository!.fetchMovieList(type: type);
+    return movieRepository.fetchMovieList(type: type);
   }
 }

@@ -2,5 +2,5 @@ import 'package:todo_movie/features/screens/home/data/models/intheaters/intheate
 import 'package:todo_movie/features/screens/home/data/models/movie/movie_model.dart';
 
 abstract class MovieRepository {
-  Future<List<MovieModel>> fetchMovieList({String type});
+  Future<List<MovieModel>?> fetchMovieList({String type});
 }

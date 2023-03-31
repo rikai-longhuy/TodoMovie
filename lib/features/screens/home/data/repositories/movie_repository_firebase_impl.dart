@@ -5,11 +5,11 @@ import 'package:todo_movie/features/screens/home/data/datasources/remote/movie_r
 import 'package:todo_movie/features/screens/home/data/models/movie/movie_model.dart';
 import 'package:todo_movie/features/screens/home/domain/repositories/movie_repository.dart';
 
-class MovieRepositoryImpl extends MovieRepository {
+class MovieRepositoryFirebaseImpl extends MovieRepository {
   final NetworkInfo? networkInfo;
   final MovieRemoteDataSource? movieRemoteDataSource;
 
-  MovieRepositoryImpl({this.networkInfo, this.movieRemoteDataSource});
+  MovieRepositoryFirebaseImpl({this.networkInfo, this.movieRemoteDataSource});
 
   @override
   Future<List<MovieModel>?> fetchMovieList({String? type}) async {
