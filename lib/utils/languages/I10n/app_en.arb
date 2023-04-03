@@ -1,0 +1,15 @@
+{
+  "helloWorld": "Hello World!",
+  "@helloWorld": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "intheater": "In Theater",
+  "@intheater": {
+    "description": ""
+  },
+  "upcoming": "Upcoming",
+  "@upcoming": {
+    "description": ""
+  }
+
+}
